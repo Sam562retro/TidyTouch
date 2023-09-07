@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Page</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Alfa+Slab+One&family=Bebas+Neue&family=Black+Ops+One&family=Delicious+Handrawn&family=Montserrat:wght@600;700;800;900&family=Mouse+Memoirs&family=Oswald:wght@200;300;400;500;600;700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&family=Roboto+Mono:wght@100;200;300;400;500;600;700&family=Roboto+Slab:wght@100;300;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
+</head>
+
+<body>
+  <div class="nav">
+    <style>
+      .nav {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100vw;
+        height: 7vh;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        position: fixed;
+        z-index: 999;
+        background-color: #262626;
+        top: 0;
+      }
+
+      .name {
+        font-size: 3.5vh;
+        margin-left: 2vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .name img {
+        aspect-ratio: 1/1;
+        max-width: 2vw;
+        margin-right: 1vw;
+      }
+
+      .name .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .items {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .nav-item {
+        font-size: 2vh;
+        color: #d9d9d9;
+        transition: all 300ms ease-out;
+        cursor: pointer;
+        position: relative;
+        text-decoration: none;
+        margin-right: 2vw;
+      }
+
+      .nav-item::after {
+        content: "";
+        height: 1px;
+        background: #d9d9d9;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -0.1vh;
+        opacity: 0;
+        transform: scaleX(0);
+        transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+      }
+
+      .nav-item:hover::after {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+
+      a:link {
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      @media only screen and (max-width: 620px) {
+        .nav-item {
+          margin-right: 4vw;
+          font-size: 3vw;
+        }
+
+        .name {
+          font-size: 5.5vw;
+        }
+
+        .name {
+          margin-left: 4vw;
+        }
+      }
+    </style>
+    <div class="name">
+      <div class="logo">
+      </div>
+      TidyTouch
+    </div>
+    <div class="items">
+      <a href="index.html">
+        <div class="nav-item">Rate</div>
+      </a>
+      <a href="graph.html">
+        <div class="nav-item">Graph</div>
+      </a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="class">
+      <section class="wrapper">
+        <label for="cars">Class:&nbsp;&nbsp;</label>
+        <select name="cars" id="cars">
+          <option value="volvo">11-C</option>
+          <option value="saab">11-D</option>
+          <option value="opel">11-F</option>
+          <option value="audi">11-G</option>
+        </select>
+        <!-- <div class="top">11-F</div>
+        <div class="bottom" aria-hidden="true">11-F</div> -->
+      </section>
+    </div>
+    <div class="box">
+      <div class="report">
+        <div class="block">
+          <div class="subheading">
+            Fans
+          </div>
+          <div class="form-wrapper">
+            <form action="/p/quote.php" method="GET">
+              <div class="debt-amount-slider" id="input-1" onclick="update()">
+                <input type="radio" name="debt-amount" id="form1-1" value="1" required>
+                <label for="form1-1" data-debt-amount=" &#x2B50;"></label>
+                <input type="radio" name="debt-amount" id="form1-2" value="2" required>
+                <label for="form1-2" data-debt-amount="&#x2B50; &#x2B50;"></label>
+                <input type="radio" name="debt-amount" id="form1-3" value="3" required>
+                <label for="form1-3" data-debt-amount="&#x2B50; &#x2B50; &#x2B50;"></label>
+                <input type="radio" name="debt-amount" id="form1-4" value="4" required>
+                <label for="form1-4" data-debt-amount="&#x2B50; &#x2B50; &#x2B50; &#x2B50;"></label>
+                <input type="radio" name="debt-amount" id="form1-5" value="5" required>
+                <label for="form1-5" data-debt-amount="&#x2B50; &#x2B50; &#x2B50; &#x2B50; &#x2B50;"></label>
+                <div class="debt-amount-pos"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="block">
+          <div class="subheading">
+            Fans
+          </div>
+          <div class="form-wrapper">
+            <form action="/p/quote.php" method="GET">
+              <div class="debt-amount-slider" id="input-2" onclick="update()">
+                <input type="radio" name="debt-amount" id="6" value="6" required>
+                <label for="6" data-debt-amount=" &#x2B50;"></label>
+                <input type="radio" name="debt-amount" id="7" value="7" required>
+                <label for="7" data-debt-amount="&#x2B50; &#x2B50;"></label>
+                <input type="radio" name="debt-amount" id="8" value="8" required>
+                <label for="8" data-debt-amount="&#x2B50; &#x2B50; &#x2B50;"></label>
+                <input type="radio" name="debt-amount" id="9" value="9" required>
+                <label for="9" data-debt-amount="&#x2B50; &#x2B50; &#x2B50; &#x2B50;"></label>
+                <input type="radio" name="debt-amount" id="10" value="10" required>
+                <label for="10" data-debt-amount="&#x2B50; &#x2B50; &#x2B50; &#x2B50; &#x2B50;"></label>
+                <div class="debt-amount-pos"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="block">
+          <div class="subheading">
+            Fans
+          </div>
+          <div class="form-wrapper">
+            <form action="/p/quote.php" method="GET">
+              <div class="debt-amount-slider" id="input-3" onclick="update()">
+                <input type="radio" name="debt-amount" id="11" value="11" required>
+                <label for="11" data-debt-amount=" &#x2B50;"></label>
+                <input type="radio" name="debt-amount" id="12" value="12" required>
+                <label for="12" data-debt-amount="&#x2B50; &#x2B50;"></label>
+                <input type="radio" name="debt-amount" id="13" value="13" required>
+                <label for="13" data-debt-amount="&#x2B50; &#x2B50; &#x2B50;"></label>
+                <input type="radio" name="debt-amount" id="14" value="14" required>
+                <label for="14" data-debt-amount="&#x2B50; &#x2B50; &#x2B50; &#x2B50;"></label>
+                <input type="radio" name="debt-amount" id="15" value="15" required>
+                <label for="15" data-debt-amount="&#x2B50; &#x2B50; &#x2B50; &#x2B50; &#x2B50;"></label>
+                <div class="debt-amount-pos"></div> <!-- Unique debt-amount-pos for the second form -->
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="scoreBox">
+          <span class="textScore" style="margin-bottom: 5vh; width: 100%; text-align: center;">Overall Rating:</span>
+          <div class="score" id="score">
+            <div class="text">
+              <span class="range">5</span>
+              <span class="range">4</span>
+              <span class="range">3</span>
+              <span class="range">2</span>
+              <span class="range">1</span>
+            </div>
+            <div id="fill" class="fill">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="button">
+      Submit
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+    integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+
+
+  <script type="text/javascript">
+
+
+
+    function update() {
+
+      var element = document.getElementById('score');
+      var position = element.getBoundingClientRect();
+
+      // Get all radio buttons on the page
+      input1 = document.getElementById("input-1")
+      input2 = document.getElementById("input-2")
+      input3 = document.getElementById("input-3")
+      let inpValue = 0
+      let value = 0;
+      let a;
+      let fill = document.getElementById("fill");
+
+      const radioButtons = [input1.querySelectorAll('input[type="radio"]'), input2.querySelectorAll('input[type="radio"]'), input3.querySelectorAll('input[type="radio"]')]
+
+      for (let i = 0; i < 3; i++) {
+        a = radioButtons[i]
+        a.forEach(radioButton => {
+          if (radioButton.checked) {
+            value = radioButton.value % 5
+            if (value == 0) {
+              value = 5
+            }
+
+            inpValue += value
+          }
+        });
+      }
+
+      let ans = Math.floor(((inpValue / 15) * 100) / 20)
+
+
+
+      if (ans == 1) {
+        fill.style.height = 30 * 0.13 + "vh";
+        fill.style.marginTop = 30 - 30 * 0.13 + "vh";
+      } else if (ans == 0) {
+        fill.style.height = 30 * 0 + "vh";
+        fill.style.marginTop = 30 - 30 * 0 + "vh";
+      }
+      else {
+        fill.style.height = 30 * ((ans - 1) / 4) + "vh";
+        fill.style.marginTop = 30 - 30 * ((ans - 1) / 4) + "vh";
+      }
+
+      console.log(ans)
+
+      if (ans == 4) {
+        var x = position.left / 1680;
+        var y = (position.top + ((30 - 30 * (ans / 5)) * 19.2)) / 1050;
+        confetti({
+          particleCount: 30,
+          startVelocity: 15,
+          spread: 10,
+          origin: {
+            x: x + 0.01,
+            // since they fall down, start a bit higher than random
+            y: y
+          }
+        });
+      }
+
+
+
+    }
+
+
+
+    let fill = document.getElementById("fill");
+
+    function editScore() {
+      var sliderClean =
+        (document.getElementById("sliderClean").value / 10) * 100;
+      var sliderFurniture =
+        (document.getElementById("sliderFurniture").value / 10) * 100;
+      var sliderFan = (document.getElementById("sliderFan").value / 10) * 100;
+      var sliderPlazma =
+        (document.getElementById("sliderPlazma").value / 10) * 100;
+
+      const total =
+        ((sliderClean + sliderFurniture + sliderFan + sliderPlazma) / 400) *
+        100;
+      fill.style.height = 30 * (total / 100) + "vh";
+      fill.style.marginTop = 30 - 30 * (total / 100) + "vh";
+    }
+
+    $(function () {
+      $(".rangeClean input").on("input", function () {
+        var getValRange = $(this).val();
+        $(".rangeClean span").text(getValRange);
+      });
+    });
+    $(function () {
+      $(".rangeFurniture input").on("input", function () {
+        var getValRange = $(this).val();
+        $(".rangeFurniture span").text(getValRange);
+      });
+    });
+    $(function () {
+      $(".rangePlazma input").on("input", function () {
+        var getValRange = $(this).val();
+        $(".rangePlazma span").text(getValRange);
+      });
+    });
+    $(function () {
+      $(".rangeFans input").on("input", function () {
+        var getValRange = $(this).val();
+        $(".rangeFans span").text(getValRange);
+      });
+    });
+  </script>
+</body>
+
+</html>

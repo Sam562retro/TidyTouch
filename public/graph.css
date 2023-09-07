@@ -1,0 +1,109 @@
+:root {
+    --bg: #262626;
+    --accent-1: #746D69;
+    --aceent-2: #ACADA8;
+    --aceent-3: #CCCDC6;
+    --text: #E8E9EB;
+    --info: #FCA311;
+    --purple: #af52de;
+    --purple-shadow: rgba(194, 109, 236, 0.722);
+    --text-color: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: poppins;
+    color: var(--text);
+}
+
+body {
+    background-color: var(--bg);
+}
+
+.container {
+    padding-top: 14vh;
+    width: 100vw;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    height: 10vh;
+    font-family: "Oswald", sans-serif;
+    font-size: 2vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-color);
+  }
+  
+  select {
+    color: black;
+    font-family: "Oswald", sans-serif;
+    font-size: 2vw;
+    text-transform: uppercase;
+    width: 4vw;
+    min-height: 5vh;
+  }
+  
+
+canvas {
+    max-height: 70vh;
+    min-height: 70vh;
+    max-width: 70vw;
+    min-width: 70vw;
+    box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,
+            100%, 0.075),
+        /* shadow ring 👇 */
+        0 0 0 1px hsla(0, 0%, 0%, 0.05),
+        /* multiple soft shadows 👇 */
+        0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+        0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
+        0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+    border-radius: 20px;
+}
+
+.heading {
+    font-size: 2vw;
+    text-transform: uppercase;
+    margin-bottom: 5vh;
+    font-family: oswald;
+}
+
+.classPerform{
+    margin-bottom: 15vh;
+}
+
+@media only screen and (max-width: 620px) {
+    .heading{
+        font-size: 4vw;
+    }
+
+    canvas {
+        max-height: 70vh;
+        min-height: 70vh;
+        max-width: 90vw;
+        min-width: 90vw;
+    }
+
+  .wrapper {
+    height: 10vh;
+    font-size: 7vw;
+  }
+  
+  select {
+    font-size: 10vw;
+    width: 10vw;
+    min-height: 10vh;
+  }
+
+}

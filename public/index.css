@@ -1,0 +1,529 @@
+:root {
+  --bg: #262626;
+  --accent-1: #746D69;
+  --aceent-2: #ACADA8;
+  --aceent-3: #CCCDC6;
+  --text: #E8E9EB;
+  --info: #FCA311;
+  --purple: rgb(175, 82, 222);
+  --purple-shadow: rgba(194, 109, 236, 0.722);
+  --text-color: hsl(0, 0%, 100%);
+}
+
+@property --score {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: poppins;
+  color: var(--text);
+}
+
+body {
+  background-color: var(--bg);
+}
+
+
+.box {
+  width: 100%;
+  display: flex;
+  padding-bottom: 5vh;
+}
+
+.container {
+  padding-top: 7vh;
+  width: 100vw;
+  height: 93vh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+  height: 10vh;
+  font-family: "Oswald", sans-serif;
+  font-size: 2vw;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+select {
+  color: black;
+  font-family: "Oswald", sans-serif;
+  font-size: 2vw;
+  text-transform: uppercase;
+  width: 4vw;
+  min-height: 5vh;
+}
+
+.scoreBox {
+  width: 13vw;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5vh;
+  align-items: center;
+  position: fixed;
+  right: 0;
+}
+
+.score {
+  height: 30vh;
+  border: 1px solid whitesmoke;
+  width: 2vw;
+  border-radius: 100px;
+  position: relative;
+  background-size: 200% 100%;
+  background-position: bottom;
+}
+
+.fill {
+  margin-top: 30vh;
+  height: 0vh;
+  background: white;
+  border-radius: 100px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55) 500ms;
+}
+
+canvas {
+  /* background: red; */
+  pointer-events: none;
+  width: 100vw;
+}
+
+.text {
+  content: "";
+  position: absolute;
+  width: 2vw;
+  height: 30vh;
+  margin-left: 200%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+.report {
+  width: 80vw;
+  margin-bottom: 5vh;
+  border: 1px solid hsla(0, 0%, 100%, 0.508);
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 5vh 0 0 0;
+  margin-top: 5vh;
+  margin-left: 5vw;
+  height: min-content;
+}
+
+.block {
+  height: 30vh;
+  width: 40%;
+  margin-bottom: 5vh;
+  border-radius: 28px;
+  background: #262626;
+  box-shadow: inset 29px 29px 45px #0f0f0f,
+    inset -29px -29px 45px #3d3d3d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.subheading {
+  font-size: 2vw;
+  color: hsla(0, 0%, 100%, 0.792);
+  font-family: bebas neue;
+  letter-spacing: 2px;
+  margin-top: 5vh;
+}
+
+
+
+
+
+
+.form-wrapper {
+  width: 100%;
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  width: 90%;
+  max-width: 500px;
+}
+
+.form-wrapper-2 .debt-amount-slider {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  user-select: none;
+}
+
+form .debt-amount-slider {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  user-select: none;
+}
+
+form .debt-amount-slider::before {
+  content: " ";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  width: calc(100% * (4 / 5));
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #000;
+}
+
+form .debt-amount-slider input,
+form .debt-amount-slider label {
+  box-sizing: border-box;
+  flex: 1;
+  user-select: none;
+  cursor: pointer;
+}
+
+form .debt-amount-slider label {
+  display: inline-block;
+  position: relative;
+  width: 20%;
+  height: 100%;
+  user-select: none;
+}
+
+form .debt-amount-slider label::before {
+  content: attr(data-debt-amount);
+  position: absolute;
+  left: 50%;
+  padding-top: 10px;
+  transform: translate(-50%, 45px);
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  font-weight: 400;
+  width: 5.3vw;
+  text-align: center;
+  word-wrap: break-word;
+  opacity: 0.85;
+  transition: all 0.15s ease-in-out;
+}
+
+form .debt-amount-slider label::after {
+  content: " ";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border: 2px solid #000;
+  background: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+form .debt-amount-slider label:hover::after {
+  transform: translate(-50%, -50%) scale(1.25);
+}
+
+form .debt-amount-slider input {
+  display: none;
+}
+
+form .debt-amount-slider input:checked+label::before {
+  font-weight: 800;
+  opacity: 1;
+}
+
+form .debt-amount-slider input:checked+label::after {
+  border-width: 4px;
+  transform: translate(-50%, -50%) scale(0.75);
+}
+
+form .debt-amount-slider input:checked~.debt-amount-pos {
+  opacity: 1;
+}
+
+form .debt-amount-slider input:checked:nth-child(1)~.debt-amount-pos {
+  left: 10%;
+}
+
+form .debt-amount-slider input:checked:nth-child(3)~.debt-amount-pos {
+  left: 30%;
+}
+
+form .debt-amount-slider input:checked:nth-child(5)~.debt-amount-pos {
+  left: 50%;
+}
+
+form .debt-amount-slider input:checked:nth-child(7)~.debt-amount-pos {
+  left: 70%;
+}
+
+form .debt-amount-slider input:checked:nth-child(9)~.debt-amount-pos {
+  left: 90%;
+}
+
+form .debt-amount-slider .debt-amount-pos {
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  background: #000;
+  border-radius: 50%;
+  transition: all 0.15s ease-in-out;
+  transform: translate(-50%, -50%);
+  border: 2px solid #fff;
+  opacity: 0;
+  z-index: 2;
+}
+
+form:valid .debt-amount-slider input+label::before {
+  transform: translate(-50%, 45px) scale(0.9);
+  transition: all 0.15s linear;
+}
+
+form:valid .debt-amount-slider input:checked+label::before {
+  transform: translate(-50%, 45px) scale(1.1);
+  transition: all 0.15s linear;
+}
+
+form+button {
+  display: block;
+  position: relative;
+  margin: 56px auto 0;
+  padding: 10px 20px;
+  appearance: none;
+  transition: all 0.15s ease-in-out;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 600;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 8px;
+  outline: 0;
+  user-select: none;
+  cursor: pointer;
+}
+
+form+button:hover {
+  background: #000;
+  color: #fff;
+}
+
+form+button:hover:active {
+  transform: scale(0.9);
+}
+
+form+button:focus {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
+  pointer-events: none;
+}
+
+form+button:focus::before {
+  animation: spin 1s linear infinite;
+}
+
+form+button::before {
+  display: inline-block;
+  width: 0;
+  opacity: 0;
+  content: "\f3f4";
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+  margin-right: 0;
+  transform: rotate(0deg);
+}
+
+form:invalid+button {
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+    width: 24px;
+    opacity: 1;
+    margin-right: 12px;
+  }
+
+  to {
+    transform: rotate(360deg);
+    width: 24px;
+    opacity: 1;
+    margin-right: 12px;
+  }
+}
+
+.button{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background-color: #212121;
+  font-size: 1.5vh;
+  padding: 1vh 1vw;
+  border-radius: 1vh;
+  cursor: pointer;
+  border: 1px solid black;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transform: translateX(-50%) translateY(100%);
+  transition: all 300ms ease-in-out;
+}
+.button:hover{
+  background-color: #000000;
+}
+.button:active{
+  padding: 0.5vh 0.5vw;
+  font-size: 1vh;
+  transition: all 100ms ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------- */
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 620px) {
+  .container {
+    position: relative;
+    padding-top: 7vh;
+    width: 100vw;
+    height: max-content;
+  }
+
+  .report {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    border: none;
+  }
+
+  .wrapper {
+    height: 10vh;
+    font-size: 7vw;
+  }
+  
+  select {
+    font-size: 10vw;
+    width: 10vw;
+    min-height: 10vh;
+  }
+
+  .block {
+    width: 100%;
+    margin-bottom: 3vh;
+  }
+
+  .subheading {
+    font-size: 5vw;
+  }
+
+  .form-wrapper {
+    margin-top: 2vh;
+  }
+
+  form .debt-amount-slider label::after {
+    width: 20px;
+    height: 20px;
+  }
+
+  form .debt-amount-slider label::before {
+    font-size: 2.1vw;
+    width: 7vw;
+  }
+
+  form .debt-amount-slider .debt-amount-pos {
+    width: 9px;
+    height: 9px;
+  }
+
+  .textScore {
+    font-size: 3.5vw;
+  }
+
+  .scoreBox {
+    margin-top: 0vh;
+    top: 0;
+    width: 23vw;
+    height: 100vh;
+  }
+
+  .score {
+    width: 5vw;
+  }
+
+  .text {
+    margin-left: 150%;
+  }
+
+  .button{
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    font-size: 1.8vh;
+    padding: 1vh 20vw;
+    border-radius: 1vh;
+    border: 1px solid black;
+    transform: translateX(-50%) translateY(-100%);
+  }
+  .button:active{
+    padding: 1vh 20vw;
+    font-size: 1.8vh;
+    background-color: #28a745;
+  }
+}
